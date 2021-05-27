@@ -1,5 +1,6 @@
 @extends('layouts.main_layout')
 @section('content')
+@include('components.add')
 <ul>
 
     @foreach ($employees as $item)
@@ -22,4 +23,5 @@
     </li>
     @endforeach
 </ul>
+
 @endsection

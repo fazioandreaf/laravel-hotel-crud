@@ -40,4 +40,22 @@ class controller_main extends Controller
         $employee->delete();
         return redirect() -> route('home');
     }
+    function add(){
+        return view('pages/add');
+    }
+    function add_action(Request $request){
+        // dd($request->all());
+        $validate=$request->validate([
+
+            'firstname'=> 'required|string',
+            'lastname'=> 'required|string',
+            'role'=> 'required|string',
+            'ral'=> 'required|integer',
+            ]);
+        $employee=employees::create($validate);
+        // dd($employee);
+        return redirect() -> route('employee_detail', $employee->id);
+    }
+
+
 }

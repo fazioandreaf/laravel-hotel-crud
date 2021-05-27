@@ -19,3 +19,5 @@ Route::get('/edit/{id}', 'controller_main@edit')->name('edit');
 Route::get('/employee_detail/{id}', 'controller_main@employee_detail')->name('employee_detail');
 Route::post('/description/{id}', 'controller_main@update')->name('update');
 Route::get('/delete/{id}', 'controller_main@delete')->name('delete');
+Route::get('/ad', 'controller_main@add')->name('add');
+Route::post('/ad_action', 'controller_main@add_action')->name('add_action');
