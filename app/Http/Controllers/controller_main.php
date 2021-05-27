@@ -30,11 +30,14 @@ class controller_main extends Controller
         $employee->update($validate);
         // dd($employee);
         return redirect() -> route('employee_detail', $employee->id);
-
     }
     function employee_detail($id){
         $employee=employees::findOrFail($id);
         return view('pages.employee_detail',compact('employee'));
-
+    }
+    function delete($id){
+        $employee=employees::findOrFail($id);
+        $employee->delete();
+        return redirect() -> route('home');
     }
 }
