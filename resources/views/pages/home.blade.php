@@ -1,4 +1,15 @@
 @extends('layouts.main_layout')
 @section('content')
-<h1>home</h1>
+<ul>
+
+    @foreach ($employees as $item)
+    <li>
+        <a href="">
+
+            {{$item->firstname}}
+            {{$item->lastname}}
+        </a>
+    </li>
+    @endforeach
+</ul>
 @endsection
